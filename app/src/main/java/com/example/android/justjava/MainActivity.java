@@ -35,19 +35,26 @@ public class MainActivity extends AppCompatActivity {
      * @param view
      */
     public void submitOrder(View view) {
-        String priceMessage = "Price: $" + (quantity * priceOfCoffee);
-        priceMessage = priceMessage + "\nThank You!";
-        displayMessage(priceMessage);
-        //displayPrice(quantity * priceOfCoffee);
+
+
+        String orderMessage = createOrderSummary(quantity);
+
+        displayMessage(orderMessage);
+
+
+    }
+
+    private int calculatePrice(){
+        return quantity * priceOfCoffee;
     }
 
     /**
      * This method displays the given quantity value on the screen.
-     * @param number
+     * @param inputNumber
      */
-    private void display(int number) {
+    private void displayQuantity(int inputNumber) {
         TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
-        quantityTextView.setText("" + number);
+        quantityTextView.setText("" + inputNumber);
     }
 
     /**
@@ -55,25 +62,54 @@ public class MainActivity extends AppCompatActivity {
      * @param number
      */
     private void displayPrice(int number){
-        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
-        priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
+        TextView orderSummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
+        orderSummaryTextView.setText(NumberFormat.getCurrencyInstance().format(number));
+
     }
 
     /**
      * This method displays the given text on the screen.
      */
     private void displayMessage(String message) {
-        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
-        priceTextView.setText(message);
+        TextView orderSummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
+        orderSummaryTextView.setText(message);
     }
 
+    /**
+     * Increment quantity
+     * @param view
+     */
     public void increment(View view){
         quantity = quantity +1;
-        display(quantity);
+        displayQuantity(quantity);
     }
 
+    /**
+     * Decrement quantity
+     * @param view
+     */
     public void decrement(View view){
         quantity = quantity -1;
-        display(quantity);
+        displayQuantity(quantity);
     }
+
+    /**
+     * Creates order summary string and returns it.
+     * @param orderPrice
+     * @return
+     */
+    public String createOrderSummary(int orderPrice){
+
+        String nameOfUser = "Kaptain Kunal";
+        int price = calculatePrice();
+
+        String priceMessage = "Name: " + nameOfUser + "\n";
+        priceMessage = priceMessage + "Quantity: " + orderPrice + "\n";
+        priceMessage = priceMessage + "Total: $" + price + "\n";
+        priceMessage = priceMessage + "Thank You!";
+
+        return priceMessage;
+    }
+
+
 }

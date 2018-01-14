@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="8dp"
             android:layout_marginLeft="8dp"
-            android:text="2"
+            android:text="0"
             android:textColor="@android:color/black"
             android:textSize="16sp" />
 
@@ -49,16 +49,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Price"/>
+        android:text="Order Summary"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="$10"
+        android:text="$0"
         android:textColor="@android:color/black"
         android:textSize="16sp"
-        android:id="@+id/price_text_view"/>
+        android:id="@+id/order_summary_text_view"/>
 
     <Button
         android:id="@+id/order_button"
