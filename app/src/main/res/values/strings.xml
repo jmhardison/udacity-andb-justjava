@@ -1,3 +1,23 @@
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
     <string name="app_name">Just Java</string>
+    <string name="toppings">Toppings</string>
+    <string name="whippedcream">Whipped cream</string>
+    <string name="chocolate">Chocolate</string>
+    <string name="quantity">Quantity</string>
+    <string name="name">Name</string>
+    <string name="order">Order</string>
+
+    <string name="composeemailsubject">JustJava order for <xliff:g id="name" example="Amy">%s</xliff:g></string>
+    <string name="morethan100toast">You cannot order more than 100 cups.</string>
+    <string name="lessthan1toast">You cannot order less than 1 cup.</string>
+
+    <string name="composebodyline1">Name: <xliff:g id="name" example="Amy">%s</xliff:g></string>
+    <string name="composebodyline2">Add whipped cream? <xliff:g id="addWhippedCream" example="true">%b</xliff:g></string>
+    <string name="composebodyline3">Add chocolate? <xliff:g id="addChocolate" example="true">%b</xliff:g></string>
+    <string name="composebodyline4">Quantity: <xliff:g id="quantity" example="2">%d</xliff:g></string>
+    <string name="composebodyline5">Total: <xliff:g id="price" example="$10">%s</xliff:g></string>
+    <string name="composebodyline6">Thank You!</string>
+
+
 </resources>
